@@ -25,6 +25,23 @@ typedef int (*Comparer) (const void *a, const void *b);
 int my_comparer(const void *this, const void *that)
 {
 	//TODO: IMPLEMENT ME!
+	Process * thisProcess = (Process *)this;
+	Process * thatProcess = (Process *)that;
+	
+	// Priority == Priority.
+  if(thisProcess->priority == thatProcess->priority){
+		 if(thisProcess->arrival_time == thatProcess->arrival_time){
+			 return 0; // ArrivalTime == ArrivalTime.
+		 }else if(thisProcess->arrival_time < thatProcess->arrival_time){
+			 return -1; // ArrivalTime < ArrivalTime.
+		 }else{
+			 return 1; // ArrivalTime > ArrivalTime.
+		 }
+  }else if(thisProcess->priority < thatProcess->priority){
+		return 1; // Priority < Priority. thisProcess should come first.
+	}else{
+		return -1; // Priority > Priority. thisProcess should come after.
+	}
 	return 0;
 }
 
