@@ -12,10 +12,10 @@ int main (void)
 {
 	/* IMPLEMENT ME: Insert your algorithm here */
 	int operation = 0;
-	int a = 4;
-	int b = 9;
+	int a = 5;
+	int b = 10;
 	
-	printf("\n a = 4, b = 9.\n");
+	printf("\n a = 5, b = 10.\n");
 	// Make sure that we get the correct input given.
 	while(operation >= 0 && operation <= 3){
 		printf("Enter 0(add), 1(subtract), 2(multiply), 3(divide), or 4(exit)\n");
